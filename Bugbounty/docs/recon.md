@@ -67,9 +67,6 @@ HTML5: Detected via doctype declaration
 UncommonHeaders: Header alt-svc was present
 
 Response Headers (HTTPS):
-```
-
-```
 HTTP/1.1 403 Forbidden  
 Content-Length: 134  
 Content-Type: text/html; charset=UTF-8  
