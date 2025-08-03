@@ -75,7 +75,7 @@ These are the most impactful and technically relevant labs in this project:
 
 ## Full Report
 
-📄 [Full Ethical Hacking Lab Report](./pdf_files/CP3414_ethical_hacking_lab.pdf)
+[Full Ethical Hacking Lab Report(about 60 pages)](./pdf_files/CP3414_ethical_hacking_lab.pdf)
 
 
 
