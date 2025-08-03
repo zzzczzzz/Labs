@@ -82,5 +82,7 @@ The server blocks direct access with a 403 Forbidden response, possibly due to I
 No server technology (e.g., Apache, Nginx) was exposed in the headers, which may indicate hardened configurations or use of CDN/WAF
 
 ### screenshots
+![WhatWeb HTTP 301 Redirect](./screenshots/recon_whatweb_http_redirect.png)
+![WhatWeb HTTPS 403 Forbidden](./screenshots/recon_whatweb_https_forbidden.png)
 
 ---
