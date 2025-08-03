@@ -35,7 +35,7 @@ These are the most impactful and technically relevant labs in this project:
 
 ---
 
-## 🔍 Full Lab List
+## Full Lab List
 
 | Lab No. | Topic | Key Focus |
 |--------|-------|-----------|
@@ -54,7 +54,7 @@ These are the most impactful and technically relevant labs in this project:
 
 ---
 
-## 🛠 Tools Used
+## Tools Used
 - `theHarvester`, `Sublist3r`, `DNSDumpster`
 - `nmap`, `Hydra`, `Metasploit`, `Skipfish`, `Uniscan`
 - SQL injection payloads, XSS vectors
@@ -63,7 +63,7 @@ These are the most impactful and technically relevant labs in this project:
 
 ---
 
-##  Key Learnings
+## Key Learnings
 - Reconnaissance using passive and active techniques
 - Exploiting insecure configurations (XSS, SQLi, weak passwords)
 - Enumeration of networked systems and services
