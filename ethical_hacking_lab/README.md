@@ -69,11 +69,11 @@ These are the most impactful and technically relevant labs in this project:
 ---
 
 ## PDF files
-See the `pdf_files` folder for selected evidence of attack success, tool output, and payload injection.
+See the [`pdf_files`](./pdf_files) folder for selected evidence of attack success, tool output, and payload injection.
 
 ---
 
 ## Reference
-Full detailed lab report available in `/full_reports/cp3414_ethical_hacking_lab.pdf`
+Full detailed lab report available in [`cp3414_ethical_hacking_lab.pdf`](./full_reports/cp3414_ethical_hacking_lab.pdf)
 
 
