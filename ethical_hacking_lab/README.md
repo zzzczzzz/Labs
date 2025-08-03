@@ -73,7 +73,9 @@ These are the most impactful and technically relevant labs in this project:
 
 ---
 
-## Reference
-Full detailed lab report available in [`cp3414_ethical_hacking_lab.pdf`](./CP3414_ethical_hacking_lab.pdf)
+## Full Report
+
+📄 [Full Ethical Hacking Lab Report](./pdf_files/CP3414_ethical_hacking_lab.pdf)
+
 
 
