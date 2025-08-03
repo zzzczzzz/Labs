@@ -16,17 +16,12 @@ These are the most impactful and technically relevant labs in this project:
    - Deployed on an Android emulator; achieved remote shell via backdoor connection.
    - Showed potential for mobile surveillance and control.
 
-3. **Brute Forcing Services (VNC, Postgres, MySQL)**
-   - Used Hydra and custom wordlists to gain access to exposed services.
-   - Extracted credentials and verified remote access through cracked services.
-   - Illustrated risks of weak passwords and exposed ports.
-
-4. **Web Vulnerability Scanning (Skipfish & Uniscan)**
+3. **Web Vulnerability Scanning (Skipfish & Uniscan)**
    - Automated scanning to uncover issues like XSS vectors, hidden directories, no CSRF protection.
    - Analyzed real HTTP responses and server configurations.
    - Emphasized importance of patch management and secure design.
 
-5. **DNS Enumeration & Passive Recon**
+4. **DNS Enumeration & Passive Recon**
    - Compared `theHarvester` and `Sublist3r` for domain discovery.
    - Identified VM's DNS records, subdomains, and email servers using DNSDumpster.
    - Highlighted attacker reconnaissance techniques.
