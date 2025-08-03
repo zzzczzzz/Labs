@@ -11,20 +11,23 @@ These are the most impactful and technically relevant labs in this project:
    - Performed union-based SQL injection to extract system information and files.
    - Injected persistent JavaScript to simulate cookie theft and UI manipulation.
 
-2. **Android Malware Creation using msfvenom**
-   - Crafted a malicious APK with embedded Meterpreter payload.
-   - Deployed on an Android emulator; achieved remote shell via backdoor connection.
-   - Showed potential for mobile surveillance and control.
-
-3. **Web Vulnerability Scanning (Skipfish & Uniscan)**
+2. **Web Vulnerability Scanning (Skipfish & Uniscan)**
    - Automated scanning to uncover issues like XSS vectors, hidden directories, no CSRF protection.
    - Analyzed real HTTP responses and server configurations.
    - Emphasized importance of patch management and secure design.
 
-4. **DNS Enumeration & Passive Recon**
+3. **DNS Enumeration & Passive Recon**
    - Compared `theHarvester` and `Sublist3r` for domain discovery.
    - Identified VM's DNS records, subdomains, and email servers using DNSDumpster.
    - Highlighted attacker reconnaissance techniques.
+
+4. **Exploiting Outdated Apache & Samba Services**
+   - Identified vulnerable Apache version (1.3.20) and mapped CVEs.
+   - Used ExploitDB to find relevant public exploits.
+   - Delivered payload via web service and gained access to Windows lab machine.
+   - Demonstrated post-exploitation with commands like `shutdown` and `zombies 0`.
+   - Emphasized importance of patch management and exploit-based attack vectors.
+
 
 ---
 
