@@ -10,16 +10,19 @@ These are the most impactful and technically relevant labs in this project:
    - Demonstrated successful exploitation of common web application vulnerabilities.
    - Performed union-based SQL injection to extract system information and files.
    - Injected persistent JavaScript to simulate cookie theft and UI manipulation.
+   - [View Report](./pdf_files/XSS_and_SQLI.pdf)
 
 2. **Web Vulnerability Scanning (Skipfish & Uniscan)**
    - Automated scanning to uncover issues like XSS vectors, hidden directories, no CSRF protection.
    - Analyzed real HTTP responses and server configurations.
    - Emphasized importance of patch management and secure design.
+   - [View Report](./pdf_files/web_vulnerability_scanning.pdf)
 
 3. **DNS Enumeration & Passive Recon**
    - Compared `theHarvester` and `Sublist3r` for domain discovery.
    - Identified VM's DNS records, subdomains, and email servers using DNSDumpster.
    - Highlighted attacker reconnaissance techniques.
+   - [View Report](./pdf_files/passive_recon.pdf)
 
 4. **Exploiting Outdated Apache**
    - Identified vulnerable Apache version (1.3.20) and mapped CVEs.
@@ -27,6 +30,7 @@ These are the most impactful and technically relevant labs in this project:
    - Delivered payload via web service and gained access to Windows lab machine.
    - Demonstrated post-exploitation with commands like `shutdown` and `zombies 0`.
    - Emphasized importance of patch management and exploit-based attack vectors.
+   - [View Report](./pdf_files/exploit_apache.pdf)
 
 
 ---
