@@ -21,7 +21,7 @@ These are the most impactful and technically relevant labs in this project:
    - Identified VM's DNS records, subdomains, and email servers using DNSDumpster.
    - Highlighted attacker reconnaissance techniques.
 
-4. **Exploiting Outdated Apache & Samba Services**
+4. **Exploiting Outdated Apache**
    - Identified vulnerable Apache version (1.3.20) and mapped CVEs.
    - Used ExploitDB to find relevant public exploits.
    - Delivered payload via web service and gained access to Windows lab machine.
