@@ -22,6 +22,7 @@ Amass reported:
 ```
 No assets were discovered
 ```
+![Amass result](./screenshots/recon_amass_no_asset_discovered.png)
 
 
 ### Analysis
