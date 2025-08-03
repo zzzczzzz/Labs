@@ -66,10 +66,6 @@ These are the most impactful and technically relevant labs in this project:
 - Privilege escalation and reverse shell techniques
 - Android APK exploitation and Wi-Fi security analysis
 
----
-
-## PDF files
-See the [`pdf_files`](./pdf_files) folder for selected evidence of attack success, tool output, and payload injection.
 
 ---
 
