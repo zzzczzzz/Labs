@@ -28,12 +28,6 @@ This repository showcases hands-on labs simulating real-world cyber attacks agai
 
 ---
 
-## Full Report
-
-[Download Full CP3417 OT Lab Report (PDF)](./pdf_files/CP3417_OT_Full_Report.pdf)
-
----
-
 ## Key Learnings
 
 - ICS protocols like Modbus are vulnerable by design when unencrypted.
