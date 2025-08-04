@@ -196,4 +196,36 @@ Cache-Control: no-cache implies dynamic content or authentication-sensitive page
 
 ---
 
+## 4. Historical URL Discovery
 
+### Objective
+To uncover potentially sensitive or legacy endpoints related to id.unity.com by querying archived URLs from the Wayback Machine. This helps identify paths such as admin panels, login endpoints, API routes, or JavaScript files that may expose useful reconnaissance data or attack surfaces.
+
+### Tool Used
+waybackurls: A tool that fetches known URLs from the Wayback Machine for a given domain.
+
+### Command Executed
+```
+waybackurls id.unity.com | tee wayback_idunity.txt
+cat wayback_idunity.txt | sort -u | grep -Ei '\.js|\.php|/admin|/login|/api|/debug' > filtered_wayback.txt
+Output Summary
+Total archived URLs discovered: ~10,000+
+```
+
+After filtering for common sensitive patterns (.js, .php, /admin, /login, /api, /debug), 349 relevant endpoints remained.
+
+### Few Examples Of Extract from filtered_wayback.txt
+
+```
+https://id.unity.com/en/login, https://id.unity.com/api/v1/tokens, https://id.unity.com/assets/app.js, https://id.unity.com/debug/config, https://id.unity.com/admin/dashboard
+```
+
+### Analysis
+Several endpoints were revealed from historical data, including login pages, APIs, and JavaScript resources.
+
+Endpoints like /api/v1/tokens and /debug/config may warrant further manual inspection for misconfigurations or sensitive information leaks.
+
+Archived /admin or /login paths indicate possible brute-force or logic flaw testing targets.
+
+### Screenshot
+![Wayback Result](./screenshots/recon_wayback_result.png)
