@@ -212,7 +212,7 @@ Output Summary
 Total archived URLs discovered: ~10,000+
 ```
 
-After filtering for common sensitive patterns (.js, .php, /admin, /login, /api, /debug), 349 relevant endpoints remained.
+After filtering for common sensitive patterns (.js, .php, /admin, /login, /api, /debug), 379 relevant endpoints remained.
 
 ### Few Examples Of Extract from filtered_wayback.txt
 
