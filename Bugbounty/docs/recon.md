@@ -232,7 +232,7 @@ Archived /admin or /login paths indicate possible brute-force or logic flaw test
 
 ---
 
-## 6. CORS Policy Analysis
+## 5. CORS Policy Analysis
 
 ### Objective
 To test whether id.unity.com allows cross-origin requests by manipulating the Origin header, in order to identify potential CORS misconfigurations.
@@ -257,3 +257,29 @@ The absence of these headers implies the site rejects cross-origin browser reque
 
 ### Conclusion
 CORS is securely configured on id.unity.com. No misconfigurations or CORS-related vulnerabilities were identified
+
+---
+
+## 6. Authentication Flow and Lockout Behavior
+
+### Objective  
+To analyze how the login mechanism works on `id.unity.com`, identify the authentication flow, and observe server responses to invalid credentials.
+
+### Observation  
+After entering fake credentials and clicking “Sign in”, the following message was displayed which is
+
+You are temporarily locked out of your account due to successive login failures.
+
+This indicates that
+The login request was processed and the server enforces a lockout mechanism.
+The presence of this message can be used to distinguish valid user accounts from invalid ones
+
+### Analysis  
+This behavior may allow for account enumeration attacks by measuring the server's response to different usernames that are
+Valid usernames trigger lockout after repeated attempts.
+Invalid usernames do not.
+
+Additionally, no traditional HTML form POST request was observed in the Network tab. This suggests that the login request might be performed via JavaScript-based XHR/fetch or iframe mechanisms, making it more difficult to intercept directly via DevTools.
+
+Further investigation using Burp Suite or deeper JS tracing is required to fully map the authentication flow and check for potential redirect-based exploits or parameter tampering.
+
