@@ -229,3 +229,31 @@ Archived /admin or /login paths indicate possible brute-force or logic flaw test
 
 ### Screenshot
 ![Wayback Result](./screenshots/recon_wayback_result.png)
+
+---
+
+## 6. CORS Policy Analysis
+
+### Objective
+To test whether id.unity.com allows cross-origin requests by manipulating the Origin header, in order to identify potential CORS misconfigurations.
+
+### Tool Used
+curl: Command-line tool to send custom HTTP headers and inspect responses.
+
+### Command Executed and Outcome
+```
+curl -i -L -H "Origin: https://evil.com" https://id.unity.com
+```
+
+### Result:
+No Access-Control-Allow-Origin or Access-Control-Allow-Credentials headers were returned in any of the responses, including through multiple HTTP 302 redirects to login and authorization endpoints.
+
+### Analysis
+The server does not reflect arbitrary Origin values.
+
+There is no indication of CORS misconfiguration (e.g., no wildcards, no credentialed CORS).
+
+The absence of these headers implies the site rejects cross-origin browser requests, as expected.
+
+### Conclusion
+CORS is securely configured on id.unity.com. No misconfigurations or CORS-related vulnerabilities were identified
