@@ -86,3 +86,51 @@ No server technology (e.g., Apache, Nginx) was exposed in the headers, which may
 ![WhatWeb HTTPS 403 Forbidden](./screenshots/recon_whatweb_https_forbidden.png)
 
 ---
+
+## 3. WHOIS Information Gathering
+
+### Objective
+To gather domain registration and ownership information about the main domain unity.com for passive reconnaissance purposes. Although the testing scope is limited to id.unity.com, analyzing the WHOIS data of the parent domain can provide insight into the organization's structure and hosting choices.
+
+### Tool Used
+whois: A command-line utility to retrieve WHOIS database information.
+
+### Command Executed
+```
+whois unity.com
+Summary of Results
+markdown
+Copy
+Edit
+Domain Name: unity.com
+Registrar: MarkMonitor Inc.
+Registrant Organization: Unity Technologies SF
+Creation Date: 1995-08-07
+Expiry Date: 2026-08-06
+Domain Status:
+  - clientDeleteProhibited
+  - clientTransferProhibited
+  - clientUpdateProhibited
+  - serverDeleteProhibited
+  - serverTransferProhibited
+  - serverUpdateProhibited
+Name Servers:
+  - asia3.akam.net
+  - eur2.akam.net
+  - eur5.akam.net
+  - ns1-105.akam.net
+  - ns1-8.akam.net
+  - usc4.akam.net
+  - use4.akam.net
+  - usw4.akam.net
+DNSSEC: unsigned
+```
+
+## Analysis
+The domain unity.com is managed by MarkMonitor, a registrar commonly used by large enterprises.
+
+The domain has been registered since 1995, indicating a well-established organization.
+
+Name servers point to Akamai, suggesting use of a Content Delivery Network or Web Application Firewall.
+
+Various domain status flags prevent unauthorized transfers or changes, indicating strong administrative control.
