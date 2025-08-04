@@ -288,7 +288,7 @@ Further investigation using Burp Suite or deeper JS tracing is required to fully
 ## 8. Directory Bruteforcing
 
 ### Objective  
-To discover hidden directories or endpoints in id.unity.com using wordlist-based brute-forcing techniques.
+To discover hidden directories or endpoints in 'id.unity.com' using wordlist-based brute-forcing techniques.
 
 ### Tool Used  
 - **Tool**: `dirsearch v0.4.3`  
@@ -306,12 +306,14 @@ python3 dirsearch.py -u https://id.unity.com -e html,js,json,php -w /usr/share/w
 
 The scan revealed several redirecting paths:
 
-Path	Status	Redirect
-/login	302	/auth/genesis_login?locale=en_US
-/en	    302	/en/login
-/i	    302	/en/login
-/s	    302	/en/login
-/in	    302	/en/login
+| Path   | Status | Redirect                                 |
+|--------|--------|------------------------------------------|
+| /login | 302    | /auth/genesis_login?locale=en_US         |
+| /en    | 302    | /en/login                                |
+| /i     | 302    | /en/login                                |
+| /s     | 302    | /en/login                                |
+| /in    | 302    | /en/login                                |
+
 
 These paths demonstrate that the server implements alias-based or language-based routing logic, redirecting various inputs to a central login handler.
 
