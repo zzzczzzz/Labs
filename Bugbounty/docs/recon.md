@@ -15,7 +15,7 @@ To perform reconnaissance by discovering subdomains associated with the target d
 - **Amass**: A reconnaissance tool for subdomain discovery
 
 ### Command Executed and Outcome
-```bash
+```
 amass enum -d id.unity.com -o unity_amass.txt
 ```
 Amass reported:
@@ -44,7 +44,7 @@ To identify technologies and server configurations used by the target id.unity.c
 WhatWeb: A web scanner that detects technologies used by websites via HTTP responses.
 
 ### Command Executed
-```bash
+```
 whatweb -v id.unity.com
 ```
 
@@ -134,3 +134,66 @@ The domain has been registered since 1995, indicating a well-established organiz
 Name servers point to Akamai, suggesting use of a Content Delivery Network or Web Application Firewall.
 
 Various domain status flags prevent unauthorized transfers or changes, indicating strong administrative control.
+
+---
+
+## 3. HTTP Header Analysis
+
+### Objective
+To inspect the HTTP response headers returned by the server to gather insights on security configurations, redirection behavior, and caching policies.
+
+### Tool Used
+- `curl`: A command-line tool for transferring data with URLs.
+
+### Command Executed
+```
+curl -I https://id.unity.com
+Response Headers
+pgsql
+Copy
+Edit
+HTTP/2 302 
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+x-download-options: noopen
+x-permitted-cross-domain-policies: none
+referrer-policy: strict-origin-when-cross-origin
+location: https://id.unity.com/en/login
+content-type: text/html; charset=utf-8
+cache-control: no-cache
+set-cookie: _genesis_auth_frontend_session=... (truncated)
+x-request-id: c1140e8d-1cbd-4478-b34d-b71e6c87ed05
+x-runtime: 0.004242
+content-length: 0
+date: Mon, 04 Aug 2025 14:04:21 GMT
+via: 1.1 google
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+```
+
+### Analysis
+
+HTTP Status Code: 302 Found indicates redirection to /en/login, confirming that direct access to the root page leads to the login interface.
+
+Security Headers indicating are these,
+
+x-frame-options: SAMEORIGIN: Prevents clickjacking by disallowing the site to be framed by other origins.
+
+x-xss-protection: 1; mode=block: Enables basic XSS filter in legacy browsers.
+
+x-content-type-options: nosniff: Prevents MIME-sniffing attacks.
+
+referrer-policy: strict origin when cross origin: Enhances privacy and reduces information leakage.
+
+Redirection Behavior: The Location header reveals the full redirect URL: https://id.unity.com/en/login.
+
+Set-Cookie: An authentication session cookie is issued, indicating the presence of a login-based application logic.
+
+Cache-Control: no-cache implies dynamic content or authentication-sensitive page.
+
+### Screenshot
+![Curl Http Header Result](./screenshots/recon_http_header_curl.png)
+
+---
+
+
