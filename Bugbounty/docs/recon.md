@@ -283,3 +283,42 @@ Additionally, no traditional HTML form POST request was observed in the Network 
 
 Further investigation using Burp Suite or deeper JS tracing is required to fully map the authentication flow and check for potential redirect-based exploits or parameter tampering.
 
+---
+
+## 8. Directory Bruteforcing
+
+### Objective  
+To discover hidden directories or endpoints in id.unity.com using wordlist-based brute-forcing techniques.
+
+### Tool Used  
+- **Tool**: `dirsearch v0.4.3`  
+- **Wordlist**: `directory-list-2.3-medium.txt`  
+- **Extensions tested**: `.html`, `.js`, `.json`, `.php`
+
+**Code Used:**
+```
+python3 dirsearch.py -u https://id.unity.com -e html,js,json,php -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+```
+### Screenshot
+![dirsearch results](./screenshots/recon_dirsearch_results.png)
+
+### Findings
+
+The scan revealed several redirecting paths:
+
+Path	Status	Redirect
+/login	302	/auth/genesis_login?locale=en_US
+/en	    302	/en/login
+/i	    302	/en/login
+/s	    302	/en/login
+/in	    302	/en/login
+
+These paths demonstrate that the server implements alias-based or language-based routing logic, redirecting various inputs to a central login handler.
+
+The scan was also interrupted by an HTTP 429 Too Many Requests response, indicating that rate limiting is enabled. This limits further brute-force attempts unless delays or proxy rotation are introduced.
+
+### Conclusion
+No sensitive directories (e.g., /admin, /debug, /config) were discovered in this scan.
+However, the server’s redirect behavior and rate-limiting protections suggest basic anti-enumeration defenses are in place.
+
+
